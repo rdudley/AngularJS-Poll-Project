@@ -7,5 +7,6 @@ angular.module('App.routes', ['ngRoute'])
 		when('/', { controller:'ListCtrl', templateUrl:'partials/list.html' }).
 		when('/new', { controller: 'NewCtrl', templateUrl: 'partials/add.html' }).
 		when('/poll/:id', { controller: 'PollCtrl', templateUrl: 'partials/poll.html' }).
+		when('/admin', { controller: 'AdminCtrl', templateUrl: 'partials/admin.html' }).
 		otherwise({ redirectTo:'/' });
 });

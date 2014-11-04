@@ -1,6 +1,3 @@
-<div class="page-header">
-	<h1>Poll List</h1>
-</div>
 <div class="row">
 	<div class="col-xs-5">
 		<a href="#/new" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span> New Poll</a>
@@ -9,17 +6,28 @@
 		<input type="text" class="form-control" ng-model="query" placeholder="Search for a poll">
 	</div>
 </div>
+
 <div class="row">
 	<div class="col-xs-12"><hr></div>
 </div>
+
 <div class="row" ng-switch on="polls.length">
-	<ul ng-switch-when="0">
-		<li><em>No polls in databases. Would you like to <a href="#/new">create one</a>?</li>
-	</ul>
-	<ul ng-switch-default>
-		<li ng-repeat="poll in Polls | filter:query">
-			<a href="#/poll/{{poll.$id}}">{{poll.question}}</a>
-		</li>
-	</ul>
+	<div class="col-xs-12">
+		<div ng-switch-when="0">
+			<h4><em>No polls in databases. Would you like to <a href="#/new">create one</a>?</em></h4>
+		</div>
+		<div ng-switch-default>
+			<div ng-repeat="poll in Polls | filter:query">
+				<h4><a href="#/poll/{{poll.$id}}"><span class="glyphicon glyphicon-stats"></span> {{poll.question}}</a> <small><em>({{poll.totalVotes}} votes)</em></small></h4>
+			</div>
+		</div>
+	</div>
 </div>
-<p>&nbsp;</p>
+<div class="row">
+	<div class="col-xs-12"><hr></div>
+</div>
+<div class="row">
+	<div class="col-xs-12">
+		<a href="#/admin" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-wrech"></span> Poll Administration</a>
+	</div>
+</div>

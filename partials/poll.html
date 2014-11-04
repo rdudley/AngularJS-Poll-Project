@@ -1,5 +1,5 @@
-<div class="well well-lg"> <strong>Question</strong><br>
-	{{poll.question}} </div>
+<div class="well well-lg">
+	<h3>{{poll.question}}</h3></div>
 <div>
 	<p class="lead">Please select one of the following options:</p>
 	<form role="form">
@@ -25,10 +25,10 @@
 		<tr ng-repeat="choice in poll.choices">
 			<td><strong>{{choice.text}}</strong> ({{choice.votes}}) votes</td>
 			<td><div class="progress">
-					<div class="progress-bar" role="progressbar" aria-valuenow="{{ (choice.votes / $parent.poll.totalvotes)*100 }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ (choice.votes / $parent.poll.totalvotes)*100 }}%;"> <span class="sr-only">{{ (choice.votes / $parent.poll.totalvotes)*100 }}%</span> </div>
+					<div class="progress-bar" role="progressbar" aria-valuenow="{{ (choice.votes / $parent.poll.totalVotes)*100 }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ (choice.votes / $parent.poll.totalVotes)*100 }}%;"> <span class="sr-only">{{ (choice.votes / $parent.poll.totalVotes)*100 }}%</span> </div>
 				</div>
 			</td>
 		</tr>
 	</table>
-	<p>{{ poll.totalvotes }} votes so far.</p>
+	<p>{{ poll.totalVotes }} votes so far.</p>
 </div>

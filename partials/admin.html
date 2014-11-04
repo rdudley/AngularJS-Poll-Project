@@ -1,0 +1,34 @@
+<div class="row">
+	<div class="col-xs-5">
+		<a href="#/" class="btn btn-default"><span class="glyphicon glyphicon-arrow-left"></span> Back to Poll List</a>
+	</div>
+	<div class="col-xs-7">
+		<input type="text" class="form-control" ng-model="query" placeholder="Search for a poll">
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-12"><hr></div>
+</div>
+<div class="row" ng-switch on="polls.length">
+	<div class="col-xs-12">
+		<div ng-switch-when="0">
+			<h4><em>No polls in databases. Would you like to <a href="#/new">create one</a>?</em></h4>
+		</div>
+		<div ng-switch-default>
+		<table class="table table-striped table-hover">
+			<thead>
+				<tr>
+					<th>Poll</th>
+					<th>Functions</th>  
+				</tr>
+    		</thead>
+    		<tbody>
+    			<tr ng-repeat="poll in Polls | filter:query">
+      				<td><h4><span class="glyphicon glyphicon-stats"></span> {{poll.question}} <small><em>({{poll.totalVotes}} votes)</em></small></h4></td>
+      				<td>[<a href="">Reset Poll Data</a>] [<a href="">Delete Poll</a>]</td>
+    			</tr>
+    		</tbody>
+  		</table>	
+		</div>
+	</div>
+</div>

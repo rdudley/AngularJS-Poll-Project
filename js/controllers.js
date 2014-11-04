@@ -4,7 +4,7 @@ angular.module('App.controllers', [])
 
 .controller('ListCtrl', ['$rootScope', '$scope', 'fb', function($rootScope, $scope, fb) {
 	
-	$rootScope.section = "Poll";
+	$rootScope.section = "Current Polls";
 	
 	$scope.Polls = fb.getPolls();
 	
@@ -72,11 +72,18 @@ angular.module('App.controllers', [])
 		
 		if(choice) {
 			$scope.userVoted = true;
-			$scope.poll.totalvotes++;
+			$scope.poll.totalVotes++;
 			$scope.poll.choices[choice].votes++;
 			$scope.poll.$save();
 		} else {
 			alert('You must select an option to vote for');
 		}
 	};	
+}])
+
+.controller('AdminCtrl', ['$rootScope', '$scope', 'fb', function($rootScope, $scope, fb) {
+	
+	$rootScope.section = "Poll Administration";
+	
+	$scope.Polls = fb.getPolls();
 }]);

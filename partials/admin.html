@@ -25,7 +25,7 @@
     		<tbody>
     			<tr ng-repeat="poll in Polls | filter:query">
       				<td><h4><span class="glyphicon glyphicon-stats"></span> {{poll.question}} <small><em>({{poll.totalVotes}} votes)</em></small></h4></td>
-      				<td>[<a href="">Reset Poll Data</a>] [<a href="">Delete Poll</a>]</td>
+      				<td>[<a ng-click="resetPoll(poll.$id)" href="">Reset Poll Data</a>] [<a ng-click="deletePoll(poll.$id)" href="">Delete Poll</a>]</td>
     			</tr>
     		</tbody>
   		</table>	

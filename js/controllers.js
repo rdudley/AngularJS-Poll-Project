@@ -86,4 +86,12 @@ angular.module('App.controllers', [])
 	$rootScope.section = "Poll Administration";
 	
 	$scope.Polls = fb.getPolls();
+	
+	$scope.resetPoll = function(id) {
+		alert("Still working on this feature...");	
+	}
+	
+	$scope.deletePoll = function(id) {
+		alert("Still working on this feature...");
+	}
 }]);

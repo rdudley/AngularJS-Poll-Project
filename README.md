@@ -1,9 +1,9 @@
-Project Name
+Sample Poll Application
 ==============
 
-*with AngularJS and Firebase*
+*Made with AngularJS and Firebase*
 
-This is a very simple application using [AngularJS](https://angularjs.org/) and [Firebase](https://www.firebase.com/). 
+This is a very simple poll application using [AngularJS](https://angularjs.org/) and [Firebase](https://www.firebase.com/). 
 
 
 ### Prerequisites
@@ -19,7 +19,8 @@ If you wish to use webserver.js to test this application locally, you will need 
 Clone the Project repository using [git][git]:
 
 ```
-Instructions...
+git clone https://github.com/rdudley/AngularJS-Poll-project.git
+cd AngularJS-Poll-Project
 ```
 
 ### Run the Application
